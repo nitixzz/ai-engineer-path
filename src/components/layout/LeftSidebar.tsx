@@ -3,7 +3,7 @@ import { ChevronRight, ChevronDown, CheckCircle2, Circle, Dot } from 'lucide-rea
 import { useUIStore } from '../../stores/useUIStore';
 import { useProgressStore } from '../../stores/useProgressStore';
 import { getAllPhases } from '../../utils/roadmapLoader';
-import { Phase, Topic } from '../../types';
+import { Phase } from '../../types';
 
 export default function LeftSidebar() {
   const { expandedPhases, togglePhase } = useUIStore();

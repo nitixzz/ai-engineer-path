@@ -115,7 +115,7 @@ export default function SearchBar() {
       {/* Search Results Dropdown */}
       {showResults && results.length > 0 && (
         <div className="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-96 overflow-y-auto z-50">
-          {results.map(({ topic, matches }, index) => (
+          {results.map(({ topic, matches }) => (
             <button
               key={topic.id}
               onClick={() => handleResultClick(topic.id)}

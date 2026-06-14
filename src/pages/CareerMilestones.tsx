@@ -82,7 +82,7 @@ export default function CareerMilestones() {
         
         {/* Milestones */}
         <div className="space-y-8">
-          {sortedMilestones.map((milestone, index) => (
+          {sortedMilestones.map((milestone) => (
             <div key={milestone.id} className="relative pl-16">
               {/* Timeline Dot */}
               <div className="absolute left-0 top-0 flex items-center justify-center w-12 h-12 bg-white border-2 border-gray-200 rounded-full">
