@@ -20,7 +20,7 @@ export const useUIStore = create<UIState>()(
     (set) => ({
       leftSidebarOpen: true,
       rightSidebarOpen: true,
-      expandedPhases: [],
+      expandedPhases: ['phase-0', 'phase-1'], // Expand first two phases by default
       
       toggleLeftSidebar: () => {
         set((state) => ({ leftSidebarOpen: !state.leftSidebarOpen }));
