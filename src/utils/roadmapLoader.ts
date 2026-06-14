@@ -1,43 +1,69 @@
 import { Phase, Topic } from '../types';
 import phase0 from '../data/roadmap/phase-0.json';
 import phase1 from '../data/roadmap/phase-1.json';
+import phase2 from '../data/roadmap/phase-2.json';
+import phase3 from '../data/roadmap/phase-3.json';
+import phase4 from '../data/roadmap/phase-4.json';
+import phase5 from '../data/roadmap/phase-5.json';
+
+// Transform function to normalize topic structure
+function normalizePhase(phase: any): Phase {
+  return {
+    ...phase,
+    topics: phase.topics.map((topic: any) => {
+      // If topic already has the correct structure, return as is
+      if (topic.videoResources && topic.articleResources) {
+        return topic;
+      }
+      
+      // Transform combined resources array into separate arrays
+      const videoResources = topic.resources
+        ? topic.resources
+            .filter((r: any) => r.type === 'video')
+            .map((r: any) => ({
+              title: r.title,
+              source: r.channel || r.source,
+              url: r.url
+            }))
+        : [];
+      
+      const articleResources = topic.resources
+        ? topic.resources
+            .filter((r: any) => r.type === 'article')
+            .map((r: any) => ({
+              title: r.title,
+              source: r.source,
+              url: r.url
+            }))
+        : [];
+      
+      // Transform nextTopics array to nextTopicId
+      const nextTopicId = topic.nextTopics && topic.nextTopics.length > 0
+        ? topic.nextTopics[0]
+        : null;
+      
+      return {
+        ...topic,
+        videoResources,
+        articleResources,
+        nextTopicId
+      };
+    })
+  };
+}
 
 // Import all available phases
 const availablePhases: Phase[] = [
   phase0 as Phase,
   phase1 as Phase,
+  normalizePhase(phase2),
+  normalizePhase(phase3),
+  normalizePhase(phase4),
+  normalizePhase(phase5),
 ];
 
 // Placeholder phases for phases not yet created
 const placeholderPhases: Phase[] = [
-  {
-    id: 'phase-2',
-    title: 'Phase 2: Developer Tools & Workflow',
-    difficulty: 'Beginner',
-    description: 'Master essential developer tools and workflows',
-    topics: []
-  },
-  {
-    id: 'phase-3',
-    title: 'Phase 3: APIs & Web Fundamentals',
-    difficulty: 'Beginner',
-    description: 'Learn how APIs work and web fundamentals',
-    topics: []
-  },
-  {
-    id: 'phase-4',
-    title: 'Phase 4: LLM API Mastery (Claude/OpenAI)',
-    difficulty: 'Intermediate',
-    description: 'Master working with LLM APIs',
-    topics: []
-  },
-  {
-    id: 'phase-5',
-    title: 'Phase 5: RAG (Retrieval Augmented Generation)',
-    difficulty: 'Intermediate',
-    description: 'Build RAG systems from scratch',
-    topics: []
-  },
   {
     id: 'phase-6',
     title: 'Phase 6: Vector Databases',

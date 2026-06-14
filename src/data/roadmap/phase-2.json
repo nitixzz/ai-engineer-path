@@ -1,0 +1,98 @@
+{
+  "id": "phase-2",
+  "title": "Phase 2: Developer Tools & Workflow",
+  "description": "Master essential developer tools and workflows for professional AI engineering.",
+  "difficulty": "Beginner",
+  "topics": [
+    {
+      "id": "phase-2-topic-1",
+      "title": "Terminal & Command Line Fluency",
+      "overview": "Master terminal commands for file navigation, running scripts, and managing development workflows.",
+      "estimatedHours": 2,
+      "difficulty": "Beginner",
+      "detailedNotes": "# Terminal & Command Line Fluency\n\nThe terminal is essential for AI engineering. Most tools and platforms are controlled via command line.\n\n## Essential Commands\n\n**Navigation:**\n```bash\npwd                    # Print working directory\nls -la                 # List files (detailed)\ncd Documents           # Change directory\ncd ..                  # Go up one level\ncd ~                   # Go to home\n```\n\n**File Operations:**\n```bash\nmkdir project          # Create directory\ntouch file.py          # Create file\ncp file.py backup.py   # Copy\nmv old.py new.py       # Rename/move\nrm file.py             # Delete\n```\n\n**Running Python:**\n```bash\npython script.py\npython train.py --epochs 10\npython script.py &     # Run in background\n```\n\n## File Paths\n\n**Absolute:** `/home/user/project/file.py`\n**Relative:** `./file.py` or `../folder/file.py`\n\n## Shortcuts\n\n- **Tab**: Auto-complete\n- **Ctrl+C**: Stop command\n- **Ctrl+L**: Clear screen\n- **Up/Down**: Command history\n\n## Why It Matters\n\nAI engineers constantly SSH into servers, run training scripts, install packages, and deploy to cloud platforms - all terminal-based.",
+      "keyConcepts": ["pwd, ls, cd", "File navigation", "mkdir, touch, cp, mv, rm", "Running Python scripts", "Terminal shortcuts"],
+      "resources": [
+        {"type": "video", "title": "Command Line Crash Course", "url": "https://www.youtube.com/watch?v=yz7nYlnXLfE", "channel": "Traversy Media"}
+      ],
+      "practiceExercise": "Create a project directory structure with folders for data, models, and src using only terminal commands.",
+      "prerequisites": [],
+      "nextTopics": ["phase-2-topic-2"]
+    },
+    {
+      "id": "phase-2-topic-2",
+      "title": "VS Code Power Features",
+      "overview": "Master VS Code shortcuts, multi-cursor editing, debugging, and extensions.",
+      "estimatedHours": 2.5,
+      "difficulty": "Beginner",
+      "detailedNotes": "# VS Code Power Features\n\nVS Code is the standard for AI/ML development.\n\n## Essential Shortcuts\n\n**Navigation:**\n```\nCtrl+P              Quick file open\nCtrl+Shift+P        Command palette\nCtrl+B              Toggle sidebar\nCtrl+`              Toggle terminal\n```\n\n**Editing:**\n```\nCtrl+D              Select next occurrence\nCtrl+Shift+L        Select all occurrences\nAlt+Click           Add cursor\nAlt+Up/Down         Move line\nCtrl+/              Toggle comment\n```\n\n## Multi-Cursor Editing\n\nEdit multiple lines simultaneously:\n1. Place cursor on word\n2. Press Ctrl+D repeatedly\n3. Type once, changes everywhere\n\n## Debugging\n\n1. Click left of line number (red dot)\n2. Press F5 to start\n3. Step through: F10 (next), F11 (into), F5 (continue)\n\n## Essential Extensions\n\n1. Python (Microsoft)\n2. Jupyter (Microsoft)\n3. Pylance\n4. GitLens\n5. Error Lens\n\n## Remote Development\n\nInstall Remote-SSH extension to edit files on remote servers as if they were local.",
+      "keyConcepts": ["Keyboard shortcuts", "Multi-cursor editing", "Debugging", "Extensions", "Remote development"],
+      "resources": [
+        {"type": "video", "title": "VS Code Crash Course", "url": "https://www.youtube.com/watch?v=WPqXP_kLzpo", "channel": "freeCodeCamp"}
+      ],
+      "practiceExercise": "Practice: (1) Set breakpoints and debug, (2) Use multi-cursor to rename variables, (3) Use Ctrl+P to switch files.",
+      "prerequisites": ["phase-2-topic-1"],
+      "nextTopics": ["phase-2-topic-3"]
+    },
+    {
+      "id": "phase-2-topic-3",
+      "title": "Git Workflow Deep Dive",
+      "overview": "Master branching, merging, conflict resolution, and collaborative workflows.",
+      "estimatedHours": 3,
+      "difficulty": "Beginner-Intermediate",
+      "detailedNotes": "# Git Workflow Deep Dive\n\nGit is essential for experiment tracking and collaboration.\n\n## Branching\n\n```bash\ngit checkout -b feature-rag\ngit add .\ngit commit -m \"Add RAG pipeline\"\ngit checkout main\ngit merge feature-rag\ngit branch -d feature-rag\n```\n\n## Merge Conflicts\n\n```python\n<<<<<<< HEAD\nmodel = \"gpt-4\"\n=======\nmodel = \"claude-3-opus\"\n>>>>>>> feature-branch\n```\n\nResolve by choosing version, removing markers, then:\n```bash\ngit add file.py\ngit commit -m \"Resolve conflict\"\n```\n\n## .gitignore\n\n```gitignore\n__pycache__/\n*.pyc\nvenv/\n.env\ndata/\nmodels/\n*.pkl\n```\n\n## Undoing Changes\n\n```bash\ngit checkout -- file.py    # Discard changes\ngit reset --soft HEAD~1    # Undo commit, keep changes\n```\n\n## Commit Messages\n\n**Good:** `git commit -m \"Add RAG pipeline with ChromaDB\"`\n**Bad:** `git commit -m \"fix\"`",
+      "keyConcepts": ["Branching", "Merging", "Conflicts", ".gitignore", "Commit messages"],
+      "resources": [
+        {"type": "video", "title": "Git and GitHub for Beginners", "url": "https://www.youtube.com/watch?v=RGOj5yH7evk", "channel": "freeCodeCamp"}
+      ],
+      "practiceExercise": "Create a repo, make a feature branch, create a merge conflict, and resolve it.",
+      "prerequisites": ["phase-0-topic-2"],
+      "nextTopics": ["phase-2-topic-4"]
+    },
+    {
+      "id": "phase-2-topic-4",
+      "title": "GitHub Portfolio Building",
+      "overview": "Create an impressive GitHub profile with custom README and professional documentation.",
+      "estimatedHours": 2,
+      "difficulty": "Beginner",
+      "detailedNotes": "# GitHub Portfolio Building\n\nYour GitHub profile is your resume for AI engineering.\n\n## Profile README\n\nCreate repo with your username, add README.md:\n\n```markdown\n# Hi, I'm [Name] 👋\n\n## 🚀 About Me\nAI Engineer building intelligent systems.\n\n## 🔭 Current Focus\n- RAG with Claude\n- Vector databases\n\n## 🛠️ Tech Stack\n![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python)\n\n## 📊 Stats\n![Stats](https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME)\n```\n\n## Project README Template\n\n```markdown\n# Project Name\n> One-line description\n\n## Features\n- Feature 1\n- Feature 2\n\n## Quick Start\n```bash\ngit clone repo\npip install -r requirements.txt\npython app.py\n```\n\n## Usage\n```python\nfrom project import Pipeline\nresult = Pipeline().run()\n```\n```\n\n## What to Pin\n\n1. Most impressive project\n2. Recent work\n3. Diverse skills\n4. Complete projects\n5. Well-documented\n\n## Best Practices\n\n- Add demo GIF\n- Clear setup instructions\n- Code examples\n- Keep updated",
+      "keyConcepts": ["Profile README", "Pinned repos", "Documentation", "Badges"],
+      "resources": [
+        {"type": "article", "title": "Awesome GitHub Profile README", "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme", "source": "GitHub"}
+      ],
+      "practiceExercise": "Create your GitHub profile README with introduction, tech stack, and project links.",
+      "prerequisites": ["phase-2-topic-3"],
+      "nextTopics": ["phase-2-topic-5"]
+    },
+    {
+      "id": "phase-2-topic-5",
+      "title": "Markdown for Developers",
+      "overview": "Master Markdown syntax for documentation and technical writing.",
+      "estimatedHours": 1.5,
+      "difficulty": "Beginner",
+      "detailedNotes": "# Markdown for Developers\n\nMarkdown is everywhere: GitHub, docs, Jupyter, Slack.\n\n## Basic Syntax\n\n```markdown\n# H1 Heading\n## H2 Heading\n\n**Bold**\n*Italic*\n`code`\n\n- Bullet\n- Point\n\n1. Numbered\n2. List\n\n[Link](url)\n![Image](url)\n```\n\n## Code Blocks\n\n````markdown\n```python\ndef hello():\n    print(\"Hello\")\n```\n````\n\n## Tables\n\n```markdown\n| Col 1 | Col 2 |\n|-------|-------|\n| Data  | Data  |\n```\n\n## Task Lists\n\n```markdown\n- [x] Done\n- [ ] Todo\n```\n\n## Blockquotes\n\n```markdown\n> Important note\n```\n\n## Links\n\n```markdown\n[Text](url)\n[Text](url \"title\")\n```\n\n## Best Practices\n\n1. Use headings hierarchically\n2. Add code examples\n3. Include tables for comparisons\n4. Use task lists for TODOs\n5. Keep it readable",
+      "keyConcepts": ["Headings", "Lists", "Code blocks", "Tables", "Links"],
+      "resources": [
+        {"type": "article", "title": "Markdown Guide", "url": "https://www.markdownguide.org/", "source": "Markdown Guide"}
+      ],
+      "practiceExercise": "Write a README with headings, code blocks, tables, and task lists.",
+      "prerequisites": [],
+      "nextTopics": ["phase-2-topic-6"]
+    },
+    {
+      "id": "phase-2-topic-6",
+      "title": "Debugging Mindset",
+      "overview": "Develop systematic debugging skills: reading tracebacks, using breakpoints, and solving errors efficiently.",
+      "estimatedHours": 2,
+      "difficulty": "Beginner",
+      "detailedNotes": "# Debugging Mindset\n\nDebugging is a core skill. Learn to solve errors systematically.\n\n## Reading Tracebacks\n\n```python\nTraceback (most recent call last):\n  File \"script.py\", line 10, in <module>\n    result = divide(10, 0)\n  File \"script.py\", line 5, in divide\n    return a / b\nZeroDivisionError: division by zero\n```\n\n**Read bottom-up:**\n1. Error type: `ZeroDivisionError`\n2. Error location: line 5 in `divide`\n3. Call stack: line 10 called `divide`\n\n## Common Error Types\n\n**SyntaxError:** Invalid Python syntax\n**NameError:** Variable not defined\n**TypeError:** Wrong type used\n**AttributeError:** Object has no attribute\n**IndexError:** List index out of range\n**KeyError:** Dictionary key not found\n**ImportError:** Module not found\n\n## Debugging Strategies\n\n1. **Read the error message**\n2. **Check the line number**\n3. **Print variables**\n4. **Use breakpoints**\n5. **Simplify the code**\n6. **Google the error**\n\n## Using Print Debugging\n\n```python\ndef process_data(data):\n    print(f\"Input: {data}\")  # Debug\n    result = transform(data)\n    print(f\"After transform: {result}\")  # Debug\n    return result\n```\n\n## Breakpoint Debugging\n\n```python\nimport pdb\n\ndef buggy_function(x):\n    pdb.set_trace()  # Pause here\n    result = x * 2\n    return result\n```\n\nCommands:\n- `n`: Next line\n- `s`: Step into\n- `c`: Continue\n- `p variable`: Print variable\n- `q`: Quit\n\n## Debugging Checklist\n\n- [ ] Read error message carefully\n- [ ] Check variable types\n- [ ] Verify function inputs\n- [ ] Test with simple data\n- [ ] Use print statements\n- [ ] Set breakpoints\n- [ ] Search error online\n\n## Pro Tips\n\n1. **Rubber duck debugging**: Explain code to someone\n2. **Binary search**: Comment out half, find which half breaks\n3. **Minimal reproduction**: Simplify until error appears\n4. **Check assumptions**: Verify what you think is true",
+      "keyConcepts": ["Tracebacks", "Error types", "Print debugging", "Breakpoints", "Systematic approach"],
+      "resources": [
+        {"type": "article", "title": "Python Debugging Guide", "url": "https://realpython.com/python-debugging-pdb/", "source": "Real Python"}
+      ],
+      "practiceExercise": "Create a buggy script with 3 different error types. Practice reading tracebacks and using print statements to debug.",
+      "prerequisites": ["phase-2-topic-2"],
+      "nextTopics": ["phase-3-topic-1"]
+    }
+  ]
+}
