@@ -1,0 +1,28 @@
+import { useEffect, useState } from 'react';
+
+export default function ReadingProgress() {
+  const [progress, setProgress] = useState(0);
+  
+  useEffect(() => {
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      setProgress(scrollPercent);
+    };
+    
+    window.addEventListener('scroll', updateProgress);
+    updateProgress(); // Initial calculation
+    
+    return () => window.removeEventListener('scroll', updateProgress);
+  }, []);
+  
+  return (
+    <div
+      className="reading-progress"
+      style={{ transform: `scaleX(${progress / 100})` }}
+    />
+  );
+}
+
+// Made with Bob

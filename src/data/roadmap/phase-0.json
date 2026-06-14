@@ -1,0 +1,151 @@
+{
+  "id": "phase-0",
+  "title": "Setup & Environment",
+  "difficulty": "Beginner",
+  "description": "Get your development environment ready for AI engineering. Install essential tools and verify everything works correctly.",
+  "topics": [
+    {
+      "id": "topic-0-1",
+      "title": "Install Python & VS Code",
+      "estimatedHours": 2,
+      "difficulty": "Beginner",
+      "overview": "Setting up Python 3.12+ and VS Code is your first step into AI engineering. You'll install Python, configure VS Code with essential extensions, and verify everything works correctly. This foundation is crucial for all future AI development work.",
+      "detailedNotes": "# Installing Python & VS Code\n\n## Why This Matters for AI Engineering\n\nPython is the **lingua franca** of AI engineering. Nearly every AI framework, library, and tool is built with Python or has Python bindings. From TensorFlow and PyTorch to LangChain and Claude's SDK, Python is everywhere in AI.\n\nVS Code has become the most popular code editor for Python development, offering:\n- Excellent Python IntelliSense and debugging\n- Jupyter notebook integration\n- Git integration\n- Extensions for AI/ML workflows\n- Remote development capabilities\n\n## Step-by-Step Installation\n\n### 1. Install Python 3.12+\n\n**Windows:**\n1. Visit [python.org](https://python.org)\n2. Download Python 3.12 or later (64-bit)\n3. **CRITICAL**: Check \"Add Python to PATH\" during installation\n4. Choose \"Install Now\" for default settings\n\n**macOS:**\n```bash\n# Using Homebrew (recommended)\nbrew install python@3.12\n\n# Verify installation\npython3 --version\n```\n\n**Linux (Ubuntu/Debian):**\n```bash\nsudo apt update\nsudo apt install python3.12 python3.12-venv python3-pip\n```\n\n### 2. Verify Python Installation\n\nOpen a terminal and run:\n```bash\npython --version\n# Should show: Python 3.12.x\n\npip --version\n# Should show pip version\n```\n\n### 3. Install VS Code\n\n1. Download from [code.visualstudio.com](https://code.visualstudio.com)\n2. Install with default settings\n3. Launch VS Code\n\n### 4. Install Essential VS Code Extensions\n\n**Python Extension (Microsoft):**\n1. Open VS Code\n2. Click Extensions icon (Ctrl+Shift+X / Cmd+Shift+X)\n3. Search for \"Python\"\n4. Install the official Microsoft Python extension\n\n**Recommended Additional Extensions:**\n- **Pylance**: Advanced Python language support\n- **Jupyter**: For notebook support\n- **GitLens**: Enhanced Git integration\n- **Error Lens**: Inline error highlighting\n\n### 5. Configure Python in VS Code\n\n1. Open Command Palette (Ctrl+Shift+P / Cmd+Shift+P)\n2. Type \"Python: Select Interpreter\"\n3. Choose your Python 3.12 installation\n\n## Verification Test\n\nCreate a test file to verify everything works:\n\n**hello_ai.py:**\n```python\n# Your first Python program for AI engineering\nimport sys\n\nprint(f\"Python version: {sys.version}\")\nprint(\"Hello, AI Engineering!\")\nprint(\"Ready to build intelligent systems.\")\n\n# Test basic Python features\ndef greet(name: str) -> str:\n    return f\"Welcome to AI engineering, {name}!\"\n\nif __name__ == \"__main__\":\n    message = greet(\"Future AI Engineer\")\n    print(message)\n```\n\n**Run it:**\n```bash\npython hello_ai.py\n```\n\n**Expected output:**\n```\nPython version: 3.12.x ...\nHello, AI Engineering!\nReady to build intelligent systems.\nWelcome to AI engineering, Future AI Engineer!\n```\n\n## Common Mistakes & Solutions\n\n### ❌ \"python: command not found\"\n**Problem:** Python not added to PATH\n**Solution:** \n- Windows: Reinstall Python, check \"Add to PATH\"\n- macOS/Linux: Use `python3` instead of `python`\n\n### ❌ VS Code can't find Python\n**Problem:** VS Code using wrong Python interpreter\n**Solution:**\n1. Open Command Palette\n2. \"Python: Select Interpreter\"\n3. Choose correct Python 3.12 installation\n\n### ❌ pip install fails\n**Problem:** pip not installed or outdated\n**Solution:**\n```bash\npython -m ensurepip --upgrade\npython -m pip install --upgrade pip\n```\n\n## Pro Tips for AI Development\n\n1. **Use Virtual Environments**: Always create isolated environments for projects\n2. **Keep Python Updated**: AI libraries often require recent Python versions\n3. **Learn VS Code Shortcuts**: Boost productivity with keyboard shortcuts\n4. **Enable Auto-Save**: Never lose code changes\n5. **Use Integrated Terminal**: Run code without leaving VS Code\n\n## What's Next?\n\nWith Python and VS Code installed, you're ready to:\n- Learn Git for version control\n- Set up virtual environments\n- Install AI libraries like `anthropic`, `openai`, `langchain`\n- Start building your first AI applications\n\n## Resources for Deeper Learning\n\n- **Python Official Tutorial**: [docs.python.org/3/tutorial](https://docs.python.org/3/tutorial/)\n- **VS Code Python Tutorial**: [code.visualstudio.com/docs/python](https://code.visualstudio.com/docs/python/python-tutorial)\n- **Real Python**: [realpython.com](https://realpython.com) - Excellent Python tutorials\n\n---\n\n**Congratulations!** You've completed your first step toward becoming an AI engineer. Your development environment is ready for building intelligent systems.",
+      "keyConcepts": [
+        "Python 3.12+ installation",
+        "VS Code setup",
+        "Python extension",
+        "PATH environment variable",
+        "Terminal basics",
+        "Python interpreter selection",
+        "Virtual environments preview"
+      ],
+      "videoResources": [
+        {
+          "title": "Python Installation Guide 2024 (Windows, Mac, Linux)",
+          "source": "Programming with Mosh",
+          "url": "https://www.youtube.com/watch?v=_uQrJ0TkZlc"
+        },
+        {
+          "title": "VS Code for Python Development",
+          "source": "Corey Schafer",
+          "url": "https://www.youtube.com/watch?v=-nh9rCzPJ20"
+        },
+        {
+          "title": "Python Setup for AI/ML Development",
+          "source": "Tech With Tim",
+          "url": "https://www.youtube.com/watch?v=7PmqqX2QAEY"
+        }
+      ],
+      "articleResources": [
+        {
+          "title": "Python Installation Guide",
+          "source": "Real Python",
+          "url": "https://realpython.com/installing-python/"
+        },
+        {
+          "title": "Getting Started with Python in VS Code",
+          "source": "VS Code Docs",
+          "url": "https://code.visualstudio.com/docs/python/python-tutorial"
+        },
+        {
+          "title": "Python for AI: Complete Setup Guide",
+          "source": "Towards Data Science",
+          "url": "https://towardsdatascience.com/python-for-ai-complete-setup-guide"
+        }
+      ],
+      "practiceExercise": "**Exercise: Verify Your Setup**\n\n1. Create a new file called `setup_test.py`\n2. Write a Python script that:\n   - Prints your Python version\n   - Imports the `sys` and `platform` modules\n   - Prints your operating system\n   - Defines and calls a simple function\n3. Run the script from VS Code's integrated terminal\n4. Take a screenshot showing the output\n5. Bonus: Try using VS Code's debugger to step through your code\n\n**Success Criteria:**\n- Script runs without errors\n- Output shows Python 3.12+\n- You can run the script from VS Code terminal\n- You understand how to create and run Python files",
+      "prerequisites": [],
+      "nextTopicId": "topic-0-2"
+    },
+    {
+      "id": "topic-0-2",
+      "title": "Git & GitHub Basics",
+      "estimatedHours": 3,
+      "difficulty": "Beginner",
+      "overview": "Version control is essential for any software project, especially in AI engineering where you'll iterate on models, prompts, and code. Learn Git fundamentals and set up GitHub to track your learning journey and build a portfolio.",
+      "detailedNotes": "# Git & GitHub Basics for AI Engineers\n\n## Why Version Control Matters in AI\n\nAI projects are highly iterative:\n- **Prompt engineering**: Track which prompts work best\n- **Model experiments**: Compare different approaches\n- **Data pipelines**: Version your data processing code\n- **Collaboration**: Work with others on AI projects\n- **Portfolio**: Showcase your work to employers\n\nGit is the industry standard for version control, and GitHub is where the AI community shares code.\n\n## Core Git Concepts\n\n### Repository (Repo)\nA project folder tracked by Git. Contains all your code and its history.\n\n### Commit\nA snapshot of your code at a point in time. Like a save point in a video game.\n\n### Branch\nA parallel version of your code. Useful for experimenting without breaking working code.\n\n### Remote\nA version of your repository hosted online (usually on GitHub).\n\n## Installation\n\n**Windows:**\n```bash\n# Download from git-scm.com\n# Or use winget:\nwinget install Git.Git\n```\n\n**macOS:**\n```bash\nbrew install git\n```\n\n**Linux:**\n```bash\nsudo apt install git\n```\n\n**Verify:**\n```bash\ngit --version\n```\n\n## Initial Configuration\n\nSet your identity (used in every commit):\n```bash\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\n\n# Verify\ngit config --list\n```\n\n## Essential Git Workflow\n\n### 1. Create a New Repository\n\n```bash\n# Create project folder\nmkdir my-ai-project\ncd my-ai-project\n\n# Initialize Git\ngit init\n\n# Create a README\necho \"# My AI Project\" > README.md\n```\n\n### 2. Track Changes\n\n```bash\n# Check status\ngit status\n\n# Add files to staging\ngit add README.md\n# Or add all files:\ngit add .\n\n# Commit changes\ngit commit -m \"Initial commit: Add README\"\n```\n\n### 3. View History\n\n```bash\n# See commit history\ngit log\n\n# Compact view\ngit log --oneline\n\n# See changes\ngit diff\n```\n\n## GitHub Setup\n\n### Create a GitHub Account\n1. Go to [github.com](https://github.com)\n2. Sign up with your email\n3. Choose a professional username (employers will see this!)\n\n### Create Your First Repository\n\n**On GitHub:**\n1. Click \"+\" → \"New repository\"\n2. Name: `ai-learning-journey`\n3. Description: \"My path to becoming an AI engineer\"\n4. Choose Public (for portfolio)\n5. Check \"Add a README file\"\n6. Click \"Create repository\"\n\n### Connect Local to GitHub\n\n```bash\n# Add remote\ngit remote add origin https://github.com/yourusername/ai-learning-journey.git\n\n# Push code\ngit branch -M main\ngit push -u origin main\n```\n\n## Daily Git Workflow\n\n```bash\n# 1. Make changes to your code\n# (edit files in VS Code)\n\n# 2. Check what changed\ngit status\ngit diff\n\n# 3. Stage changes\ngit add .\n\n# 4. Commit with descriptive message\ngit commit -m \"Add: Claude API integration for chatbot\"\n\n# 5. Push to GitHub\ngit push\n```\n\n## Commit Message Best Practices\n\n**Good commit messages:**\n```bash\ngit commit -m \"Add: RAG pipeline with ChromaDB integration\"\ngit commit -m \"Fix: Token limit error in streaming responses\"\ngit commit -m \"Update: Improve prompt for better accuracy\"\ngit commit -m \"Docs: Add setup instructions to README\"\n```\n\n**Bad commit messages:**\n```bash\ngit commit -m \"stuff\"\ngit commit -m \"fixed it\"\ngit commit -m \"asdf\"\n```\n\n## .gitignore for AI Projects\n\nCreate a `.gitignore` file to exclude sensitive and unnecessary files:\n\n```gitignore\n# Python\n__pycache__/\n*.py[cod]\n*.so\n.Python\nvenv/\nenv/\n\n# Environment variables (NEVER commit API keys!)\n.env\n.env.local\n*.key\n\n# IDE\n.vscode/\n.idea/\n\n# Data files (often too large)\n*.csv\n*.parquet\ndata/\n\n# Model files\n*.pkl\n*.h5\n*.pth\nmodels/\n\n# Jupyter\n.ipynb_checkpoints/\n\n# OS\n.DS_Store\nThumbs.db\n```\n\n## Branching for Experiments\n\n```bash\n# Create and switch to new branch\ngit checkout -b experiment-new-prompt\n\n# Make changes, commit\ngit add .\ngit commit -m \"Experiment: Try chain-of-thought prompting\"\n\n# Switch back to main\ngit checkout main\n\n# Merge if experiment worked\ngit merge experiment-new-prompt\n\n# Delete branch\ngit branch -d experiment-new-prompt\n```\n\n## Common Scenarios\n\n### Undo Last Commit (Before Push)\n```bash\ngit reset --soft HEAD~1\n```\n\n### Discard Local Changes\n```bash\ngit checkout -- filename.py\n# Or discard all:\ngit checkout -- .\n```\n\n### Pull Latest Changes\n```bash\ngit pull origin main\n```\n\n### Clone a Repository\n```bash\ngit clone https://github.com/username/repo-name.git\n```\n\n## GitHub Profile for Job Hunting\n\n### Optimize Your Profile\n1. **Profile Picture**: Professional photo\n2. **Bio**: \"AI Engineer | Building with Claude & LangChain\"\n3. **Pinned Repos**: Showcase your best 6 projects\n4. **README.md**: Create a profile README (special repo: username/username)\n5. **Green Squares**: Commit regularly to show consistency\n\n### Example Profile README\n```markdown\n# Hi, I'm [Your Name] 👋\n\n## AI Engineer in Training\n\nTransitioning from SAP to AI Engineering. Building intelligent systems with:\n- 🤖 Claude API & OpenAI\n- 🔗 LangChain & RAG pipelines\n- 📊 Python, FastAPI, Streamlit\n\n### Current Projects\n- 🔍 SAP Policy RAG Chatbot\n- 💬 Multi-agent AI Assistant\n- 📚 AI Learning Dashboard\n\n### Learning Journey\n- 📖 Following structured AI engineering curriculum\n- 🎯 Goal: AI Engineer role by 2027\n- 🔥 100+ day coding streak\n\n[LinkedIn](your-linkedin) | [Portfolio](your-site)\n```\n\n## Pro Tips\n\n1. **Commit Often**: Small, focused commits are better than large ones\n2. **Write Good Messages**: Future you will thank you\n3. **Never Commit Secrets**: Use .env files and .gitignore\n4. **Use Branches**: Experiment safely\n5. **README is Key**: First thing employers see\n6. **Show Progress**: Regular commits demonstrate consistency\n\n## Resources\n\n- **Interactive Tutorial**: [learngitbranching.js.org](https://learngitbranching.js.org/)\n- **GitHub Skills**: [skills.github.com](https://skills.github.com/)\n- **Git Cheat Sheet**: [education.github.com/git-cheat-sheet](https://education.github.com/git-cheat-sheet-education.pdf)\n\n---\n\n**Next Step**: Start tracking your AI learning journey with Git!",
+      "keyConcepts": [
+        "Git init, add, commit, push",
+        "GitHub repositories",
+        "Commit messages",
+        ".gitignore",
+        "Branches",
+        "Remote repositories",
+        "Version control workflow"
+      ],
+      "videoResources": [
+        {
+          "title": "Git and GitHub for Beginners",
+          "source": "freeCodeCamp",
+          "url": "https://www.youtube.com/watch?v=RGOj5yH7evk"
+        },
+        {
+          "title": "Git Tutorial for Beginners",
+          "source": "Programming with Mosh",
+          "url": "https://www.youtube.com/watch?v=8JJ101D3knE"
+        }
+      ],
+      "articleResources": [
+        {
+          "title": "Git Handbook",
+          "source": "GitHub Guides",
+          "url": "https://guides.github.com/introduction/git-handbook/"
+        },
+        {
+          "title": "How to Write Good Commit Messages",
+          "source": "freeCodeCamp",
+          "url": "https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/"
+        }
+      ],
+      "practiceExercise": "**Exercise: Create Your AI Learning Repository**\n\n1. Create a new GitHub repository called `ai-learning-journey`\n2. Clone it to your local machine\n3. Create a README.md with:\n   - Project title\n   - Your learning goals\n   - Topics you plan to cover\n4. Create a `.gitignore` file for Python projects\n5. Create a folder called `week-1` with a simple Python script\n6. Commit and push your changes\n7. Add a profile README to your GitHub account\n\n**Success Criteria:**\n- Repository is public on GitHub\n- README is well-formatted\n- At least 3 commits with good messages\n- .gitignore is properly configured",
+      "prerequisites": ["topic-0-1"],
+      "nextTopicId": "topic-0-3"
+    },
+    {
+      "id": "topic-0-3",
+      "title": "Project Structure & Virtual Environments",
+      "estimatedHours": 2,
+      "difficulty": "Beginner",
+      "overview": "Learn to organize AI projects professionally and use virtual environments to manage dependencies. Master pip, requirements.txt, and environment variables - essential skills for any AI engineer.",
+      "detailedNotes": "# Project Structure & Virtual Environments\n\n## Why Project Organization Matters\n\nAs an AI engineer, you'll work on multiple projects with different dependencies:\n- One project uses `langchain==0.1.0`\n- Another needs `langchain==0.2.0`\n- Without virtual environments, these conflict!\n\nProfessional project structure also makes your code:\n- **Easier to understand** for collaborators and employers\n- **Simpler to maintain** as projects grow\n- **Ready for deployment** with clear dependencies\n\n## Virtual Environments Explained\n\n### What is a Virtual Environment?\n\nA virtual environment is an isolated Python installation for a specific project. Each project gets its own:\n- Python packages\n- Package versions\n- Dependencies\n\nThink of it as a separate Python installation per project.\n\n### Why Use Virtual Environments?\n\n1. **Avoid Conflicts**: Different projects need different package versions\n2. **Clean Dependencies**: Only install what you need\n3. **Reproducibility**: Others can recreate your exact setup\n4. **Safety**: Experiment without breaking your system Python\n\n## Creating Virtual Environments\n\n### Using venv (Built-in)\n\n```bash\n# Create virtual environment\npython -m venv venv\n\n# Activate it\n# Windows:\nvenv\\Scripts\\activate\n\n# macOS/Linux:\nsource venv/bin/activate\n\n# You'll see (venv) in your terminal prompt\n```\n\n### Using conda (Alternative)\n\n```bash\n# Create environment\nconda create -n myproject python=3.12\n\n# Activate\nconda activate myproject\n```\n\n## Package Management with pip\n\n### Installing Packages\n\n```bash\n# Install a package\npip install anthropic\n\n# Install specific version\npip install langchain==0.1.0\n\n# Install multiple packages\npip install anthropic openai langchain\n\n# Install from requirements.txt\npip install -r requirements.txt\n```\n\n### Managing Dependencies\n\n```bash\n# See installed packages\npip list\n\n# Show package details\npip show anthropic\n\n# Save dependencies\npip freeze > requirements.txt\n\n# Upgrade a package\npip install --upgrade anthropic\n\n# Uninstall\npip uninstall anthropic\n```\n\n## Professional Project Structure\n\n### Basic AI Project Structure\n\n```\nmy-ai-project/\n├── venv/                  # Virtual environment (don't commit!)\n├── src/                   # Source code\n│   ├── __init__.py\n│   ├── main.py           # Entry point\n│   ├── models/           # AI models\n│   ├── utils/            # Helper functions\n│   └── config.py         # Configuration\n├── data/                  # Data files (don't commit large files!)\n│   ├── raw/\n│   └── processed/\n├── tests/                 # Unit tests\n│   └── test_main.py\n├── notebooks/             # Jupyter notebooks\n│   └── exploration.ipynb\n├── .env                   # Environment variables (don't commit!)\n├── .env.example          # Template for .env\n├── .gitignore            # Git ignore rules\n├── requirements.txt      # Python dependencies\n├── README.md             # Project documentation\n└── LICENSE               # License file\n```\n\n### Example requirements.txt\n\n```txt\n# AI/ML Libraries\nanthropic==0.18.0\nopenai==1.12.0\nlangchain==0.1.9\nlangchain-community==0.0.24\n\n# Vector Databases\nchromadb==0.4.22\npinecone-client==3.0.0\n\n# Data Processing\npandas==2.2.0\nnumpy==1.26.4\n\n# Web Framework\nstreamlit==1.31.0\nfastapi==0.109.2\nuvicorn==0.27.1\n\n# Utilities\npython-dotenv==1.0.1\nrequests==2.31.0\n```\n\n## Environment Variables with .env\n\n### Why Use .env Files?\n\n**NEVER** commit API keys to Git! Use environment variables instead.\n\n### Create .env File\n\n```bash\n# .env (add to .gitignore!)\nANTHROPIC_API_KEY=sk-ant-api03-xxx\nOPENAI_API_KEY=sk-xxx\nPINECONE_API_KEY=xxx\nPINECONE_ENV=us-west1-gcp\n\nDATABASE_URL=postgresql://localhost/mydb\nDEBUG=True\n```\n\n### Create .env.example (Commit This!)\n\n```bash\n# .env.example\nANTHROPIC_API_KEY=your_api_key_here\nOPENAI_API_KEY=your_api_key_here\nPINECONE_API_KEY=your_api_key_here\nPINECONE_ENV=your_environment\n\nDATABASE_URL=your_database_url\nDEBUG=True\n```\n\n### Load Environment Variables\n\n```python\n# config.py\nimport os\nfrom dotenv import load_dotenv\n\n# Load .env file\nload_dotenv()\n\n# Access variables\nANTHROPIC_API_KEY = os.getenv(\"ANTHROPIC_API_KEY\")\nOPENAI_API_KEY = os.getenv(\"OPENAI_API_KEY\")\n\nif not ANTHROPIC_API_KEY:\n    raise ValueError(\"ANTHROPIC_API_KEY not found in environment\")\n```\n\n## Complete Setup Workflow\n\n### 1. Create New Project\n\n```bash\n# Create project directory\nmkdir my-rag-chatbot\ncd my-rag-chatbot\n\n# Initialize Git\ngit init\n\n# Create virtual environment\npython -m venv venv\n\n# Activate it\nsource venv/bin/activate  # or venv\\Scripts\\activate on Windows\n```\n\n### 2. Install Dependencies\n\n```bash\n# Install packages\npip install anthropic langchain chromadb python-dotenv\n\n# Save dependencies\npip freeze > requirements.txt\n```\n\n### 3. Create Project Structure\n\n```bash\n# Create directories\nmkdir src data tests\n\n# Create files\ntouch src/__init__.py src/main.py\ntouch .env .env.example .gitignore README.md\n```\n\n### 4. Configure .gitignore\n\n```gitignore\n# Virtual Environment\nvenv/\nenv/\n\n# Environment Variables\n.env\n\n# Python\n__pycache__/\n*.py[cod]\n*.so\n\n# Data\ndata/\n*.csv\n\n# IDE\n.vscode/\n.idea/\n\n# OS\n.DS_Store\n```\n\n### 5. Create README\n\n```markdown\n# My RAG Chatbot\n\nA retrieval-augmented generation chatbot using Claude and ChromaDB.\n\n## Setup\n\n1. Clone the repository\n2. Create virtual environment: `python -m venv venv`\n3. Activate: `source venv/bin/activate`\n4. Install dependencies: `pip install -r requirements.txt`\n5. Copy `.env.example` to `.env` and add your API keys\n6. Run: `python src/main.py`\n\n## Features\n\n- Document ingestion and chunking\n- Vector storage with ChromaDB\n- Semantic search\n- Claude-powered responses\n\n## Tech Stack\n\n- Python 3.12\n- Anthropic Claude API\n- LangChain\n- ChromaDB\n```\n\n## Best Practices\n\n### 1. Always Use Virtual Environments\n```bash\n# Start every project with:\npython -m venv venv\nsource venv/bin/activate\n```\n\n### 2. Keep requirements.txt Updated\n```bash\n# After installing new packages:\npip freeze > requirements.txt\ngit add requirements.txt\ngit commit -m \"Update: Add new dependencies\"\n```\n\n### 3. Never Commit Secrets\n```bash\n# Always add to .gitignore:\n.env\n*.key\nsecrets/\n```\n\n### 4. Document Your Setup\n```markdown\n# In README.md, always include:\n- Installation steps\n- Required environment variables\n- How to run the project\n```\n\n### 5. Use Consistent Structure\n```\n# Follow the same structure across projects:\nsrc/     # Source code\ndata/    # Data files\ntests/   # Tests\n```\n\n## Common Issues & Solutions\n\n### Issue: \"Module not found\"\n**Solution:** Activate virtual environment first!\n```bash\nsource venv/bin/activate\npip install -r requirements.txt\n```\n\n### Issue: \"Permission denied\" when installing\n**Solution:** Don't use sudo! Use virtual environment instead.\n\n### Issue: Virtual environment not activating\n**Solution:** \n```bash\n# Windows: Use PowerShell or Git Bash\n# macOS/Linux: Check file permissions\nchmod +x venv/bin/activate\n```\n\n## Pro Tips\n\n1. **Name it venv**: Standard convention, easy to remember\n2. **Activate First**: Always activate before installing packages\n3. **One venv per project**: Don't share virtual environments\n4. **Commit requirements.txt**: Others need to know dependencies\n5. **Use .env.example**: Show what variables are needed\n\n## Resources\n\n- **Python venv docs**: [docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html)\n- **pip documentation**: [pip.pypa.io](https://pip.pypa.io/en/stable/)\n- **python-dotenv**: [pypi.org/project/python-dotenv](https://pypi.org/project/python-dotenv/)\n\n---\n\n**You're now ready to start any AI project with a professional setup!**",
+      "keyConcepts": [
+        "Virtual environments (venv)",
+        "pip package manager",
+        "requirements.txt",
+        ".env files",
+        "python-dotenv",
+        ".gitignore",
+        "Project structure",
+        "Dependency management"
+      ],
+      "videoResources": [
+        {
+          "title": "Python Virtual Environments Explained",
+          "source": "Corey Schafer",
+          "url": "https://www.youtube.com/watch?v=Kg1Yvry_Ydk"
+        },
+        {
+          "title": "Python Project Structure Best Practices",
+          "source": "ArjanCodes",
+          "url": "https://www.youtube.com/watch?v=B5U-HLAbh8w"
+        }
+      ],
+      "articleResources": [
+        {
+          "title": "Python Virtual Environments: A Primer",
+          "source": "Real Python",
+          "url": "https://realpython.com/python-virtual-environments-a-primer/"
+        },
+        {
+          "title": "Structuring Your Project",
+          "source": "The Hitchhiker's Guide to Python",
+          "url": "https://docs.python-guide.org/writing/structure/"
+        }
+      ],
+      "practiceExercise": "**Exercise: Set Up a Professional AI Project**\n\n1. Create a new project called `ai-chatbot-starter`\n2. Set up a virtual environment\n3. Install: `anthropic`, `python-dotenv`, `requests`\n4. Create a proper project structure with src/, data/, tests/\n5. Create .env and .env.example files\n6. Write a requirements.txt\n7. Create a comprehensive README.md\n8. Add a proper .gitignore\n9. Initialize Git and make your first commit\n10. Push to GitHub\n\n**Success Criteria:**\n- Virtual environment works\n- Can import installed packages\n- .env is in .gitignore\n- README has clear setup instructions\n- Project structure follows best practices",
+      "prerequisites": ["topic-0-1", "topic-0-2"],
+      "nextTopicId": "topic-1-1"
+    }
+  ]
+}

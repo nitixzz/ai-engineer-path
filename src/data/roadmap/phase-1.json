@@ -1,0 +1,97 @@
+{
+  "id": "phase-1",
+  "title": "Phase 1: Python Foundations",
+  "difficulty": "Beginner",
+  "description": "Master Python fundamentals essential for AI engineering",
+  "topics": [
+    {
+      "id": "phase-1-topic-1",
+      "title": "Variables & Data Types",
+      "estimatedHours": 2,
+      "difficulty": "Beginner",
+      "overview": "Learn Python's core data types (str, int, float, bool) and how to work with variables. Master f-strings for string formatting, which you'll use constantly in AI applications for logging, debugging, and creating dynamic prompts.",
+      "detailedNotes": "# Variables & Data Types in Python\n\n## What Are Variables?\n\nVariables are named containers that store data. In Python, you don't need to declare types explicitly—Python infers them automatically (dynamic typing).\n\n```python\n# Variable assignment\nname = \"Alice\"  # str (string)\nage = 28        # int (integer)\nheight = 5.6    # float (floating-point number)\nis_engineer = True  # bool (boolean)\n\nprint(type(name))  # <class 'str'>\nprint(type(age))   # <class 'int'>\n```\n\n## Core Data Types\n\n### Strings (str)\nText data enclosed in quotes. Use single `'` or double `\"` quotes interchangeably.\n\n```python\ngreeting = \"Hello, World!\"\nmodel_name = 'claude-3-5-sonnet-20241022'\n\n# String concatenation\nfull_name = \"Claude\" + \" \" + \"AI\"  # \"Claude AI\"\n\n# String methods\ntext = \"python programming\"\nprint(text.upper())      # \"PYTHON PROGRAMMING\"\nprint(text.capitalize()) # \"Python programming\"\nprint(text.replace(\"python\", \"Python\"))  # \"Python programming\"\n```\n\n### Integers (int)\nWhole numbers without decimals.\n\n```python\ntoken_count = 1500\nmax_tokens = 4096\ntotal = token_count + max_tokens  # 5596\n\n# Arithmetic operations\nprint(10 + 5)   # 15 (addition)\nprint(10 - 5)   # 5 (subtraction)\nprint(10 * 5)   # 50 (multiplication)\nprint(10 / 5)   # 2.0 (division - always returns float)\nprint(10 // 5)  # 2 (floor division - returns int)\nprint(10 % 3)   # 1 (modulo - remainder)\nprint(2 ** 3)   # 8 (exponentiation)\n```\n\n### Floats (float)\nNumbers with decimal points.\n\n```python\ntemperature = 0.7  # Common in LLM APIs\ncost_per_token = 0.000003\ntotal_cost = 1500 * cost_per_token  # 0.0045\n\n# Be aware of floating-point precision\nprint(0.1 + 0.2)  # 0.30000000000000004 (not exactly 0.3!)\n```\n\n### Booleans (bool)\nTrue or False values. Used extensively in conditionals.\n\n```python\nis_complete = True\nhas_error = False\n\n# Boolean operations\nprint(True and False)  # False\nprint(True or False)   # True\nprint(not True)        # False\n```\n\n## F-Strings: Modern String Formatting\n\nF-strings (formatted string literals) are the preferred way to embed variables in strings. Prefix the string with `f` and use `{}` for variables.\n\n```python\nmodel = \"Claude\"\nversion = \"3.5\"\ntemp = 0.7\n\n# F-string formatting\nmessage = f\"Using {model} {version} with temperature {temp}\"\nprint(message)  # \"Using Claude 3.5 with temperature 0.7\"\n\n# Expressions inside f-strings\ntokens = 1500\nprint(f\"Cost: ${tokens * 0.000003:.4f}\")  # \"Cost: $0.0045\"\n\n# Multi-line f-strings\nprompt = f\"\"\"\nYou are {model}, a helpful AI assistant.\nRespond in a {\"formal\" if temp < 0.5 else \"casual\"} tone.\n\"\"\"\n```\n\n## Why This Matters for AI Engineering\n\n1. **API Interactions**: You'll constantly format API requests with f-strings:\n   ```python\n   api_url = f\"https://api.anthropic.com/v1/messages\"\n   headers = {\"x-api-key\": api_key, \"anthropic-version\": \"2023-06-01\"}\n   ```\n\n2. **Prompt Engineering**: Dynamic prompts use f-strings:\n   ```python\n   user_query = \"What is RAG?\"\n   system_prompt = f\"Answer this question concisely: {user_query}\"\n   ```\n\n3. **Logging & Debugging**: Track what's happening:\n   ```python\n   print(f\"Processing {len(documents)} documents...\")\n   print(f\"Token count: {token_count}/{max_tokens}\")\n   ```\n\n## Common Mistakes\n\n1. **Mixing types without conversion**:\n   ```python\n   # Wrong:\n   # result = \"Age: \" + 25  # TypeError\n   \n   # Correct:\n   result = \"Age: \" + str(25)  # \"Age: 25\"\n   # Or use f-string:\n   result = f\"Age: {25}\"  # \"Age: 25\"\n   ```\n\n2. **Forgetting the `f` in f-strings**:\n   ```python\n   name = \"Alice\"\n   # Wrong:\n   print(\"Hello, {name}\")  # Prints literally: \"Hello, {name}\"\n   \n   # Correct:\n   print(f\"Hello, {name}\")  # \"Hello, Alice\"\n   ```\n\n3. **Integer division vs float division**:\n   ```python\n   print(7 / 2)   # 3.5 (float division)\n   print(7 // 2)  # 3 (floor division, drops decimal)\n   ```\n\n## Practice Exercise\n\nCreate variables for an AI model configuration and print a formatted summary:\n\n```python\nmodel_name = \"claude-3-5-sonnet-20241022\"\nmax_tokens = 4096\ntemperature = 0.7\ncost_per_1k_tokens = 0.003\n\n# Calculate cost for a 2000-token response\nresponse_tokens = 2000\ntotal_cost = (response_tokens / 1000) * cost_per_1k_tokens\n\n# Print formatted summary\nprint(f\"\"\"\nModel Configuration:\n- Name: {model_name}\n- Max Tokens: {max_tokens:,}\n- Temperature: {temperature}\n- Estimated Cost: ${total_cost:.4f}\n\"\"\")\n```",
+      "keyConcepts": [
+        "Variables",
+        "str, int, float, bool",
+        "Type inference",
+        "F-strings",
+        "String methods",
+        "Arithmetic operators",
+        "Type conversion"
+      ],
+      "videoResources": [
+        {
+          "title": "Python Variables and Data Types",
+          "source": "Corey Schafer",
+          "url": "https://www.youtube.com/watch?v=khKv-8q7YmY"
+        },
+        {
+          "title": "Python F-Strings Tutorial",
+          "source": "Tech With Tim",
+          "url": "https://www.youtube.com/watch?v=nghuHvKLhJA"
+        }
+      ],
+      "articleResources": [
+        {
+          "title": "Basic Data Types in Python",
+          "source": "Real Python",
+          "url": "https://realpython.com/python-data-types/"
+        },
+        {
+          "title": "Python String Formatting Best Practices",
+          "source": "Real Python",
+          "url": "https://realpython.com/python-f-strings/"
+        }
+      ],
+      "practiceExercise": "Create a script that stores information about an AI model (name, version, max tokens, temperature, cost per token). Calculate the cost for generating 5000 tokens and print a nicely formatted report using f-strings. Include at least 3 different data types.",
+      "prerequisites": [],
+      "nextTopicId": "phase-1-topic-2"
+    },
+    {
+      "id": "phase-1-topic-2",
+      "title": "Lists: Creation, Indexing, Slicing",
+      "estimatedHours": 3,
+      "difficulty": "Beginner",
+      "overview": "Master Python lists—ordered, mutable collections that you'll use constantly in AI work for storing documents, embeddings, chat history, and more. Learn indexing, slicing, and essential list methods.",
+      "detailedNotes": "# Lists in Python\n\n## What Are Lists?\n\nLists are ordered, mutable (changeable) collections that can hold items of any type. They're one of Python's most versatile data structures.\n\n```python\n# Creating lists\nmodels = [\"gpt-4\", \"claude-3-5-sonnet\", \"gemini-pro\"]\ntemperatures = [0.0, 0.3, 0.7, 1.0]\nmixed = [\"text\", 42, True, 3.14]  # Can mix types\nempty = []  # Empty list\n```\n\n## Indexing: Accessing Elements\n\nPython uses zero-based indexing. Negative indices count from the end.\n\n```python\nfruits = [\"apple\", \"banana\", \"cherry\", \"date\"]\n\n# Positive indexing (from start)\nprint(fruits[0])   # \"apple\" (first item)\nprint(fruits[1])   # \"banana\"\nprint(fruits[3])   # \"date\" (last item)\n\n# Negative indexing (from end)\nprint(fruits[-1])  # \"date\" (last item)\nprint(fruits[-2])  # \"cherry\" (second-to-last)\nprint(fruits[-4])  # \"apple\" (first item)\n\n# IndexError if out of range\n# print(fruits[10])  # IndexError: list index out of range\n```\n\n## Slicing: Extracting Sublists\n\nSlicing syntax: `list[start:stop:step]`\n- `start`: inclusive (default 0)\n- `stop`: exclusive (default len(list))\n- `step`: increment (default 1)\n\n```python\nnumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n# Basic slicing\nprint(numbers[2:5])    # [2, 3, 4] (indices 2, 3, 4)\nprint(numbers[:3])     # [0, 1, 2] (first 3 items)\nprint(numbers[7:])     # [7, 8, 9] (from index 7 to end)\nprint(numbers[:])      # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] (copy entire list)\n\n# Step parameter\nprint(numbers[::2])    # [0, 2, 4, 6, 8] (every 2nd item)\nprint(numbers[1::2])   # [1, 3, 5, 7, 9] (every 2nd, starting at index 1)\nprint(numbers[::-1])   # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] (reverse)\n\n# Negative indices in slicing\nprint(numbers[-3:])    # [7, 8, 9] (last 3 items)\nprint(numbers[:-2])    # [0, 1, 2, 3, 4, 5, 6, 7] (all except last 2)\n```\n\n## Essential List Methods\n\n### Adding Elements\n\n```python\nmodels = [\"gpt-4\"]\n\n# append(): Add single item to end\nmodels.append(\"claude-3-5-sonnet\")\nprint(models)  # [\"gpt-4\", \"claude-3-5-sonnet\"]\n\n# extend(): Add multiple items\nmodels.extend([\"gemini-pro\", \"llama-2\"])\nprint(models)  # [\"gpt-4\", \"claude-3-5-sonnet\", \"gemini-pro\", \"llama-2\"]\n\n# insert(): Add at specific position\nmodels.insert(1, \"gpt-3.5-turbo\")  # Insert at index 1\nprint(models)  # [\"gpt-4\", \"gpt-3.5-turbo\", \"claude-3-5-sonnet\", ...]\n```\n\n### Removing Elements\n\n```python\nfruits = [\"apple\", \"banana\", \"cherry\", \"banana\", \"date\"]\n\n# remove(): Remove first occurrence of value\nfruits.remove(\"banana\")\nprint(fruits)  # [\"apple\", \"cherry\", \"banana\", \"date\"]\n\n# pop(): Remove and return item at index (default: last)\nlast = fruits.pop()\nprint(last)    # \"date\"\nprint(fruits)  # [\"apple\", \"cherry\", \"banana\"]\n\nsecond = fruits.pop(1)\nprint(second)  # \"cherry\"\n\n# clear(): Remove all items\nfruits.clear()\nprint(fruits)  # []\n```\n\n### Other Useful Methods\n\n```python\nnumbers = [3, 1, 4, 1, 5, 9, 2, 6]\n\n# len(): Get length\nprint(len(numbers))  # 8\n\n# count(): Count occurrences\nprint(numbers.count(1))  # 2\n\n# index(): Find first index of value\nprint(numbers.index(4))  # 2\n\n# sort(): Sort in place\nnumbers.sort()\nprint(numbers)  # [1, 1, 2, 3, 4, 5, 6, 9]\n\n# reverse(): Reverse in place\nnumbers.reverse()\nprint(numbers)  # [9, 6, 5, 4, 3, 2, 1, 1]\n\n# sorted(): Return new sorted list (doesn't modify original)\noriginal = [3, 1, 4]\nsorted_list = sorted(original)\nprint(original)     # [3, 1, 4] (unchanged)\nprint(sorted_list)  # [1, 3, 4]\n```\n\n## List Operations\n\n```python\n# Concatenation\nlist1 = [1, 2, 3]\nlist2 = [4, 5, 6]\ncombined = list1 + list2  # [1, 2, 3, 4, 5, 6]\n\n# Repetition\nrepeated = [0] * 5  # [0, 0, 0, 0, 0]\n\n# Membership testing\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(\"apple\" in fruits)      # True\nprint(\"grape\" not in fruits)  # True\n```\n\n## Why This Matters for AI Engineering\n\n1. **Chat History**: Store conversation messages\n   ```python\n   messages = [\n       {\"role\": \"user\", \"content\": \"Hello\"},\n       {\"role\": \"assistant\", \"content\": \"Hi there!\"}\n   ]\n   messages.append({\"role\": \"user\", \"content\": \"How are you?\"})\n   ```\n\n2. **Document Processing**: Manage document chunks\n   ```python\n   chunks = []\n   for i in range(0, len(text), chunk_size):\n       chunks.append(text[i:i+chunk_size])\n   ```\n\n3. **Batch Processing**: Handle multiple items\n   ```python\n   documents = [\"doc1.txt\", \"doc2.txt\", \"doc3.txt\"]\n   for doc in documents:\n       process_document(doc)\n   ```\n\n4. **Embeddings**: Store vector representations\n   ```python\n   embeddings = [[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]]  # List of lists\n   ```\n\n## Common Mistakes\n\n1. **Modifying list while iterating**:\n   ```python\n   # Wrong:\n   numbers = [1, 2, 3, 4, 5]\n   for num in numbers:\n       if num % 2 == 0:\n           numbers.remove(num)  # Can skip elements!\n   \n   # Correct:\n   numbers = [num for num in numbers if num % 2 != 0]\n   ```\n\n2. **Confusing append() vs extend()**:\n   ```python\n   list1 = [1, 2]\n   list1.append([3, 4])   # [1, 2, [3, 4]] (nested list)\n   \n   list2 = [1, 2]\n   list2.extend([3, 4])   # [1, 2, 3, 4] (flattened)\n   ```\n\n3. **Forgetting lists are mutable**:\n   ```python\n   original = [1, 2, 3]\n   copy = original  # Both point to same list!\n   copy.append(4)\n   print(original)  # [1, 2, 3, 4] (modified!)\n   \n   # Correct way to copy:\n   copy = original.copy()  # or original[:]\n   ```",
+      "keyConcepts": [
+        "Lists",
+        "Zero-based indexing",
+        "Negative indexing",
+        "Slicing syntax",
+        "append(), extend(), insert()",
+        "remove(), pop(), clear()",
+        "sort(), reverse()",
+        "List mutability"
+      ],
+      "videoResources": [
+        {
+          "title": "Python Lists Tutorial",
+          "source": "Corey Schafer",
+          "url": "https://www.youtube.com/watch?v=W8KRzm-HUcc"
+        },
+        {
+          "title": "Python List Methods",
+          "source": "Programming with Mosh",
+          "url": "https://www.youtube.com/watch?v=9OeznAkyQz4"
+        }
+      ],
+      "articleResources": [
+        {
+          "title": "Python Lists",
+          "source": "Real Python",
+          "url": "https://realpython.com/python-lists-tuples/"
+        },
+        {
+          "title": "Python List Slicing",
+          "source": "Real Python",
+          "url": "https://realpython.com/python-slicing/"
+        }
+      ],
+      "practiceExercise": "Create a list of 10 AI model names. Practice: 1) Access the 3rd and last model using indexing, 2) Get the first 5 models using slicing, 3) Reverse the list, 4) Add 3 new models, 5) Remove a specific model, 6) Sort the list alphabetically. Print results at each step.",
+      "prerequisites": ["phase-1-topic-1"],
+      "nextTopicId": "phase-1-topic-3"
+    }
+  ]
+}
